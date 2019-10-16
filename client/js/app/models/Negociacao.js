@@ -5,23 +5,24 @@ class Negociacao {
     constructor(data, quantidade, valor) {
         this._data = data;
         this._quantidade = quantidade;
-        this._valor = valor;        
+        this._valor = valor;
+        Object.freeze(this);     // o this representa o n1    
     }
 
     // criar funcao dentro de uma classe = METODO
     // criar funcao fora da classe = FUNCAO
 
-    getVolume() {
+    get volume() {
         return this._quantidade * this._valor;
     }
 
-    getData() {
+    get data() {
         return this._data;
     }
-    getQuantidade() {
+    get quantidade() {
         return this._quantidade;
     }
-    getValor() {
+    get valor() {
         return this._valor;
     }
 }
