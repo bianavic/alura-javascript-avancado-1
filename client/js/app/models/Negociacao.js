@@ -3,7 +3,7 @@
 class Negociacao {
     // define atributos de uma classe com  constructor
     constructor(data, quantidade, valor) {
-        this._data = data;
+        this._data = new Date(data.getTime()); // programação defensiva
         this._quantidade = quantidade;
         this._valor = valor;
         // freeze é shallow, fica apenas na superfície. nao consegue congelar um objeto ( _data )
@@ -18,7 +18,7 @@ class Negociacao {
     }
 
     get data() {
-        return this._data;
+        return new Date(this._data.getTime());
     }
     get quantidade() {
         return this._quantidade;
