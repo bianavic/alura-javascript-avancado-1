@@ -65,9 +65,9 @@
 	var n1 = new Negociacao(new Date(), 5, 700);
 	
 	console.log(n1.data);
-	var amanha = new Date();
-	amanha.setDate(17);
-	n1.data = amanha;
+	
+	n1.data.setDate(17);
+	
 	console.log(n1.data);
 
 	</script>
