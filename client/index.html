@@ -63,14 +63,12 @@
 	<script>
 	
 	var n1 = new Negociacao(new Date(), 5, 700);
-	Object.freeze(n1)
-
-	n1._quantidade = 77777777;
+	
 	console.log(n1.data);
-	console.log(n1.quantidade);
-	console.log(n1.valor);
-	console.log(n1.volume);
-	// OO = dados e comportamento caminham juntos
+	var amanha = new Date();
+	amanha.setDate(17);
+	n1.data = amanha;
+	console.log(n1.data);
 
 	</script>
 </body>
