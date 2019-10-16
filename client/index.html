@@ -1,118 +1,73 @@
 <!DOCTYPE html>
-<html lang="pt-br">
-
+<html>
 <head>
-	<meta charset="UTF-8">
-	<title>Relatório de Ofícios</title>
-	<link rel="icon" href="favicon.ico" type="image/x-icon">
-	<link rel="stylesheet" type="text/css" href="css/reset.css">
-	<link rel="stylesheet" type="text/css" href="css/index.css">
-
+    <meta charset="UTF-8">
+    <title>Negociações</title>
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/bootstrap-theme.css">
+    
 </head>
-
 <body class="container">
+    
+    <h1 class="text-center">Negociações</h1>
+    
+    <form class="form">
+        
+        <div class="form-group">
+            <label for="data">Data</label>
+            <input type="date" id="data" class="form-control" required autofocus/>        
+        </div>    
+        
+        <div class="form-group">
+            <label for="quantidade">Quantidade</label>
+            <input type="number" min="1" step="1" id="quantidade" class="form-control" value="1" required/>
+        </div>
+        
+        <div class="form-group">
+            <label for="valor">Valor</label>
+            <input id="valor" type="number" class="form-control"  min="0.01" step="0.01" value="0.0" required />
+        </div>
+        
+        <button class="btn btn-primary" type="submit">Incluir</button>
+    </form>
+    
+    <div class="text-center">
+        <button class="btn btn-primary text-center" type="button">
+            Importar Negociações
+        </button>
+        <button class="btn btn-primary text-center" type="button">
+            Apagar
+        </button>
+    </div> 
+    <br>
+    <br>
+    
+    <table class="table table-hover table-bordered">
+        <thead>
+            <tr>
+                <th>DATA</th>
+                <th>QUANTIDADE</th>
+                <th>VALOR</th>
+                <th>VOLUME</th>
+            </tr>
+        </thead>
+        
+        <tbody>
+        </tbody>
+        
+        <tfoot>
+        </tfoot>
+	</table>
+	
+	<script src="js/app/models/Negociacao.js"></script>
+	<script>
+	
+	var n1 = new Negociacao(new Date(), 5, 1700);
+	var volume = n1.obtemVolume;
+	console.log(volume);
 
-	<header>
-		<div class="container">
-			<h1 class="titulo"></h1>
-		</div>
-	</header>
-	<main>
-		<section class="container">
-			<h2 id="titulo-form">Entrada de Novos Ofícios</h2>
-			
-			<!-- RELATÓRIOS DOS OFÍCIOS -->
+	// OO = dados e comportamento caminham juntos
 
-			<table>
-				<thead>
-					<tr>
-						<th>Origem</th>
-						<th>Número do Ministério</th>
-						<th>Nome</th>
-						<th>ID</th>
-					</tr>
-				</thead>
-				
-				<tbody id="relatorio-oficio">
-					<tr class="oficio" id="primeiro-oficio">
-						<td class="info-origem">MP</td>
-						<td class="info-numero">MP 0000001</td>
-						<td class="info-nome">Maria</td>
-						<td class="info-id">TS 1000000001</td>
-					</tr>
-
-					<tr class="oficio">
-						<td class="info-origem">TJ</td>
-						<td class="info-numero">TJ 0000001</td>
-						<td class="info-nome">1.72</td>
-						<td class="info-id">40</td>
-					</tr>
-
-					<tr class="oficio">
-						<td class="info-origem">DP</td>
-						<td class="info-numero">80</td>
-						<td class="info-nome">1.72</td>
-						<td class="info-id">40</td>
-					</tr>
-
-					<tr class="oficio">
-						<td class="info-origem">ID</td>
-						<td class="info-numero">80</td>
-						<td class="info-nome">1.72</td>
-						<td class="info-id">40</td>
-					</tr>
-
-					<!-- CADASTRAR OFICIO -->
-					<fieldset>
-						<table cellspacing="10">
-
-							<tr>
-								<td> <label for="origem">Origem:</label> </td>
-								<td align="left"><input type="text" name="origem">
-							</tr>
-							<tr>
-								<td><label for="justica">Número do Ministério: </label></td>
-								<td align="left"><input type="text" name="justica"></td>
-							</tr>
-							<tr>
-								<td> <label for="nome">Nome:</label></td>
-								<td align="left"><input type="text" name="nome"> </td>
-							</tr>
-
-							<tr>
-								<td> <label for="id">ID:</label> </td>
-								<td align="left"><input type="text" name="id"></td>
-							</tr>
-
-
-							<tr>
-								<td> <label>Adicionar Ofício:</label> </td>
-								<td align="left"><input type="text" name="adicionar-oficio"></td>
-							</tr>
-
-							<tr>
-								<td><label for="imagem">Documento:</label></td>
-								<td> <input type="file" name="imagem"> </td>
-							</tr>
-
-
-						</table>
-					</fieldset>
-
-
-					<br />
-
-					<button id="adicionar-oficio" class="button bto-principal">Adicionar</button>
-
-					<input type="submit">
-					<input type="reset" value="Limpar">
-
-					</form>
-
-				</tbody>
-			</table>
-		</section>
-	</main>
-	<script src="js/oficio.js"></script>
+	</script>
 </body>
 </html>
