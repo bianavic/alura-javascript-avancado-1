@@ -6,6 +6,7 @@ class Negociacao {
         this._data = data;
         this._quantidade = quantidade;
         this._valor = valor;
+        // freeze é shallow, fica apenas na superfície. nao consegue congelar um objeto ( _data )
         Object.freeze(this);     // o this representa o n1    
     }
 
